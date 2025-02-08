@@ -1,0 +1,33 @@
+<div id="updateForm">
+
+    <h1 id="updateContactTitle">Kişiyi Düzenle</h1>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" class="myform">
+
+        <div class="myInputs">
+            <mat-form-field class="example-full-width">
+                <mat-label>Adı</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Soyadı</mat-label>
+                <input matInput formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Telefon Numarası</mat-label>
+                <input matInput formControlName="phoneNumber">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Addresi</mat-label>
+                <input matInput formControlName="address">
+            </mat-form-field>
+        </div>
+
+        <button class="actionButtons" type="button" mat-dialog-close mat-raised-button color="warn">İptal</button>
+        <button class="actionButtons" [disabled]="updateForm.invalid" type="submit" mat-raised-button
+        [ngClass]="{'enabled-button': !updateForm.invalid, 'disabled-button': updateForm.invalid}"
+        [ngStyle]="!updateForm.invalid ? {'background-color': 'green', 'color': 'white'} : {}">Güncelle</button>
+    </form>
+</div>

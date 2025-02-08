@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="animation-container">
+        <div class="phone-animation">
+            <div class="phone">
+                <div class="screen"></div>
+                <div class="button"></div>
+            </div>
+        </div>
+    </div>
+    <mat-card class="welcome-card">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>📚Telefon Rehberine Hoşgeldiniz</mat-card-title>
+                <mat-card-subtitle>🎨Kişilerinizi rahatça yönetin</mat-card-subtitle>
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="intro">📋 <b>Bu proje, bir telefon rehberi uygulamasıdır.</b></p>
+            <ul class="feature-list">
+                <li>📞 <b>Kişi Ekleme:</b> Yeni kişileri rehberinize ekleyin ve bilgilerini düzenleyin.</li>
+                <li>❌ <b>Kişi Silme:</b> Rehberinizden istemediğiniz kişileri kaldırın.</li>
+                <li>✏️ <b>Kişi Güncelleme:</b> Var olan kişilerin bilgilerini güncelleyin.</li>
+                <li>🔍 <b>Kişi Bilgilerini Görüntüleme:</b> Kişilerin detaylı bilgilerini görüntüleyin.</li>
+                <li>📖 <b>Telefon Rehberine Erişme:</b> Rehberinize kolayca erişin ve tüm bilgileri yönetin.</li>
+            </ul>
+            <p class="responsive-info">🌟 <b>Projemiz tamamen duyarlıdır (responsive),</b> bu nedenle farklı ekran boyutlarında da mükemmel bir görünüm sunar.</p>
+        </mat-card-content>
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        🗓️ Bugünün Tarihi
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{panelOpenState ? 'Kapatmak için tıklayın' : 'Açmak için tıklayın'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p id="date"><b>Tarih: </b> {{todayDate}}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card>
+</div>
